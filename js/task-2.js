@@ -1,44 +1,37 @@
 'use strict';
 
-function calcAverageCalories(days) {
-    let a = 0;
-    for (let i = 0; i < days.length; i++) {
-        a += days[i].calories;
+const getUsersWithFriend = (users, friendName) => allUsers.filter(user => user.friends.includes(friendName));
+
+const allUsers = [
+    {
+        name: "Moore Hensley",
+        friends: ["Sharron Pace"]
+    },
+    {
+        name: "Sharlene Bush",
+        friends: ["Briana Decker", "Sharron Pace"]
+    },
+    {
+        name: "Ross Vazquez",
+        friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
+    },
+    {
+        name: "Elma Head",
+        friends: ["Goldie Gentry", "Aisha Tran"]
+    },
+    {
+        name: "Carey Barr",
+        friends: ["Jordan Sampson", "Eddie Strong"]
+    },
+    {
+        name: "Blackburn Dotson",
+        friends: ["Jacklyn Lucas", "Linda Chapman"]
+    },
+    {
+        name: "Sheree Anthony",
+        friends: ["Goldie Gentry", "Briana Decker"]
     }
-    if (days.length > 0) {
-        return a / days.length;
-    }
-    else {
-        return 0;
-    }
-}
-
-
-
-console.log(
-    calcAverageCalories([
-        { day: "monday", calories: 3010 },
-        { day: "tuesday", calories: 3200 },
-        { day: "wednesday", calories: 3120 },
-        { day: "thursday", calories: 2900 },
-        { day: "friday", calories: 3450 },
-        { day: "saturday", calories: 3280 },
-        { day: "sunday", calories: 3300 }
-    ])
-);
-
-console.log(
-    calcAverageCalories([
-        { day: "monday", calories: 2040 },
-        { day: "tuesday", calories: 2270 },
-        { day: "wednesday", calories: 2420 },
-        { day: "thursday", calories: 1900 },
-        { day: "friday", calories: 2370 },
-        { day: "saturday", calories: 2280 },
-        { day: "sunday", calories: 2610 }
-    ])
-);
-
-console.log(
-    calcAverageCalories([])
-);
+];
+console.log(getUsersWithFriend(allUsers, "Briana Decker"));
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
+console.log(getUsersWithFriend(allUsers, "Adrian Cross"));
