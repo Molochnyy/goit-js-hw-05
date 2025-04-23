@@ -1,4 +1,4 @@
-const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender.includes(gender)).reduce((acc, user, index, arr) => {
+const getTotalBalanceByGender = (users, gender) => users.filter(user => user.gender.length === gender.length).reduce((acc, user, index, arr) => {
     return acc + user.balance;
 }, 0);
 
